@@ -15,6 +15,7 @@
 		F6C33B9927F8F55300C010EB /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C33B9827F8F55300C010EB /* View+Ext.swift */; };
 		F6C33B9C27F8F61100C010EB /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C33B9B27F8F61100C010EB /* TaskListView.swift */; };
 		F6C33B9E27F8F6FC00C010EB /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C33B9D27F8F6FC00C010EB /* TaskCellView.swift */; };
+		F6C33BA127F8FB9D00C010EB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C33BA027F8FB9D00C010EB /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		F6C33B9827F8F55300C010EB /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		F6C33B9B27F8F61100C010EB /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		F6C33B9D27F8F6FC00C010EB /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
+		F6C33BA027F8FB9D00C010EB /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 		F6C33B8627F8F2C000C010EB /* TaskDemoFirebase */ = {
 			isa = PBXGroup;
 			children = (
+				F6C33B9F27F8FB8200C010EB /* Model */,
 				F6C33B9A27F8F5C200C010EB /* Screens */,
 				F6C33B9527F8F46D00C010EB /* Extensions */,
 				F6C33B8727F8F2C000C010EB /* TaskDemoFirebaseApp.swift */,
@@ -93,6 +96,14 @@
 				F6C33B9D27F8F6FC00C010EB /* TaskCellView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		F6C33B9F27F8FB8200C010EB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F6C33BA027F8FB9D00C010EB /* Task.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,6 +181,7 @@
 				F6C33B9C27F8F61100C010EB /* TaskListView.swift in Sources */,
 				F6C33B8827F8F2C000C010EB /* TaskDemoFirebaseApp.swift in Sources */,
 				F6C33B9727F8F48600C010EB /* Color+Ext.swift in Sources */,
+				F6C33BA127F8FB9D00C010EB /* Task.swift in Sources */,
 				F6C33B9E27F8F6FC00C010EB /* TaskCellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
