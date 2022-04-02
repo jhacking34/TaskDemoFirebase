@@ -11,7 +11,7 @@ import SwiftUI
 struct TaskDemoFirebaseApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TaskListView()
         }
     }
 }
