@@ -16,9 +16,9 @@ class TaskCellViewModel: ObservableObject, Identifiable {
     
     var id: String = ""
     
-//    static func newTask() -> TaskCellViewModel {
-//        TaskCellViewModel(localtask: Task(title: "", priority: .medium, completed: false))
-//    }
+    static func newTask() -> TaskCellViewModel {
+        TaskCellViewModel(localtask: Task(title: "", priority: .medium, completed: false))
+    }
     
     init(localtask: Task) {
         self.task = localtask

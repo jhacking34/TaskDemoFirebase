@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TaskListView: View {
     @ObservedObject var taskListVM = TaskListViewModel()
+    @State var presentAddNew = false
     
     var body: some View {
         GeometryReader{ gr in
@@ -20,8 +21,24 @@ struct TaskListView: View {
                     .fill(Color.brandSecondary)
                     .rotationEffect(.degrees(-50))
                     .offset(x: -gr.size.width * 0.5, y: -gr.size.height * 0.52)
-                
                 VStack{
+                    ZStack{
+                        Button {
+                            self.presentAddNew.toggle()
+                        } label: {
+                            HStack{
+                                Spacer()
+                                Image(systemName: "plus.circle.fill")
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                Text("New Task")
+                            }
+                            .padding(.trailing, 10)
+                            .font(.system(size: 18, weight: .semibold, design:.rounded))
+                            .foregroundColor(Color.brandForegroundStandard)
+                        }
+                        
+                    }
                     Text("Simple Stay On Task")
                         .font(.largeTitle)
                         .bold()
@@ -43,6 +60,12 @@ struct TaskListView: View {
                     List{
                         ForEach (taskListVM.taskCellViewModels) { taskCellVM in
                            TaskCellView(taskCellVM: taskCellVM, imgName: "circle")
+                        }
+                        .onDelete { indexSet in
+                            taskListVM.removeTask(indexSet)
+                        }
+                        if self.presentAddNew{
+                            TaskCellView(taskCellVM: TaskCellViewModel.newTask(), imgName: "circle")
                         }
                     }
                     .listStyle(.plain)

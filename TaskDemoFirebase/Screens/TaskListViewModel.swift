@@ -16,4 +16,8 @@ class TaskListViewModel: ObservableObject{
             TaskCellViewModel(localtask: task)
         }
     }
+    
+    func removeTask(_ atLocation: IndexSet){
+        taskCellViewModels.remove(atOffsets: atLocation)
+    }
 }

@@ -18,6 +18,9 @@ struct TaskCellView: View {
                 .font(.largeTitle)
                 .foregroundColor(Color.brandAccent)
                 .padding(.leading, 50)
+                .onTapGesture {
+                    self.taskCellVM.task.completed.toggle()
+                }
             TextField("Enter task title", text: $taskCellVM.task.title)
                 .id(taskCellVM.id) //This binds the id from the array in the VM which is populated from the combine pipeline.
                 .foregroundColor(Color.brandBackground)
