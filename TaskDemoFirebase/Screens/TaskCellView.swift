@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct TaskCellView: View {
+    @ObservedObject var taskCellVM: TaskCellViewModel
     
     let imgName : String
-    let rowText : String
     
     var body: some View {
         HStack(spacing: 12){
@@ -18,7 +18,8 @@ struct TaskCellView: View {
                 .font(.largeTitle)
                 .foregroundColor(Color.brandAccent)
                 .padding(.leading, 50)
-            Text(rowText)
+            TextField("Enter task title", text: $taskCellVM.task.title)
+                .id(taskCellVM.id) //This binds the id from the array in the VM which is populated from the combine pipeline.
                 .foregroundColor(Color.brandBackground)
                 .font(.system(size: 24, weight: .semibold, design: .rounded))
                 .padding(.vertical, 10)
@@ -30,7 +31,9 @@ struct TaskCellView: View {
 struct TaskCellView_Previews: PreviewProvider {
     static var previews: some View {
         List{
-            TaskCellView(imgName: "person.fill", rowText: "Demo Item")
+            TaskCellView(taskCellVM: TaskCellViewModel(localtask: testDataTasks[0]), imgName: "circle")
+            TaskCellView(taskCellVM: TaskCellViewModel(localtask: testDataTasks[1]), imgName: "circle")
+            TaskCellView(taskCellVM: TaskCellViewModel(localtask: testDataTasks[2]), imgName: "circle")
         }
         .listStyle(.automatic)
     }

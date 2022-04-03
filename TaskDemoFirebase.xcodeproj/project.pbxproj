@@ -16,6 +16,8 @@
 		F6C33B9C27F8F61100C010EB /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C33B9B27F8F61100C010EB /* TaskListView.swift */; };
 		F6C33B9E27F8F6FC00C010EB /* TaskCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C33B9D27F8F6FC00C010EB /* TaskCellView.swift */; };
 		F6C33BA127F8FB9D00C010EB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C33BA027F8FB9D00C010EB /* Task.swift */; };
+		F6C33BA327F9D86700C010EB /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C33BA227F9D86700C010EB /* TaskListViewModel.swift */; };
+		F6C33BA527F9D8AA00C010EB /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C33BA427F9D8AA00C010EB /* TaskCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +31,8 @@
 		F6C33B9B27F8F61100C010EB /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		F6C33B9D27F8F6FC00C010EB /* TaskCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellView.swift; sourceTree = "<group>"; };
 		F6C33BA027F8FB9D00C010EB /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		F6C33BA227F9D86700C010EB /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
+		F6C33BA427F9D8AA00C010EB /* TaskCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 			children = (
 				F6C33B9B27F8F61100C010EB /* TaskListView.swift */,
 				F6C33B9D27F8F6FC00C010EB /* TaskCellView.swift */,
+				F6C33BA227F9D86700C010EB /* TaskListViewModel.swift */,
+				F6C33BA427F9D8AA00C010EB /* TaskCellViewModel.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -181,6 +187,8 @@
 				F6C33B9C27F8F61100C010EB /* TaskListView.swift in Sources */,
 				F6C33B8827F8F2C000C010EB /* TaskDemoFirebaseApp.swift in Sources */,
 				F6C33B9727F8F48600C010EB /* Color+Ext.swift in Sources */,
+				F6C33BA327F9D86700C010EB /* TaskListViewModel.swift in Sources */,
+				F6C33BA527F9D8AA00C010EB /* TaskCellViewModel.swift in Sources */,
 				F6C33BA127F8FB9D00C010EB /* Task.swift in Sources */,
 				F6C33B9E27F8F6FC00C010EB /* TaskCellView.swift in Sources */,
 			);

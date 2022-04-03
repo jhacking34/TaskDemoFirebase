@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct TaskListView: View {
+    @ObservedObject var taskListVM = TaskListViewModel()
+    
     var body: some View {
         GeometryReader{ gr in
             ZStack{
@@ -39,14 +41,11 @@ struct TaskListView: View {
                         .padding(.bottom, 80)
                     
                     List{
-                        TaskCellView(imgName: "checkmark.circle.fill", rowText: "Task One")
-                        TaskCellView(imgName: "circle", rowText: "Task Two")
-                        TaskCellView(imgName: "circle", rowText: "Task Three")
-                        TaskCellView(imgName: "circle", rowText: "Task Four")
+                        ForEach (taskListVM.taskCellViewModels) { taskCellVM in
+                           TaskCellView(taskCellVM: taskCellVM, imgName: "circle")
+                        }
                     }
                     .listStyle(.plain)
-                    
-                    
                 }
             }
         }
