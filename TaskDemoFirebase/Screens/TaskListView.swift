@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct TaskListView: View {
+//    @AppStorage("testDataTasks") var taskData = Task(title: "Test", priority: .medium, completed: false).encode()!
     @ObservedObject var taskListVM = TaskListViewModel()
     @State var presentAddNew = false
     
@@ -71,6 +72,9 @@ struct TaskListView: View {
                     .listStyle(.plain)
                 }
             }
+        }
+        .onAppear(){
+           // taskListVM.loadJsonData()
         }
     }
 }

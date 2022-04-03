@@ -9,6 +9,7 @@ import SwiftUI
 
 struct TaskCellView: View {
     @ObservedObject var taskCellVM: TaskCellViewModel
+    var onCommit: (Result<Task, InputError>) -> Void = {_ in }
     
     let imgName : String
     
@@ -21,7 +22,14 @@ struct TaskCellView: View {
                 .onTapGesture {
                     self.taskCellVM.task.completed.toggle()
                 }
-            TextField("Enter task title", text: $taskCellVM.task.title)
+            TextField("Enter task title", text: $taskCellVM.task.title, onCommit: {
+                if !self.taskCellVM.task.title.isEmpty{
+                    self.onCommit(.success(self.taskCellVM.task))
+                } else {
+                    self.onCommit(.failure(.empty))
+                }
+                
+            })
                 .id(taskCellVM.id) //This binds the id from the array in the VM which is populated from the combine pipeline.
                 .foregroundColor(Color.brandBackground)
                 .font(.system(size: 24, weight: .semibold, design: .rounded))

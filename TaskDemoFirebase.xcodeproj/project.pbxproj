@@ -18,6 +18,8 @@
 		F6C33BA127F8FB9D00C010EB /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C33BA027F8FB9D00C010EB /* Task.swift */; };
 		F6C33BA327F9D86700C010EB /* TaskListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C33BA227F9D86700C010EB /* TaskListViewModel.swift */; };
 		F6C33BA527F9D8AA00C010EB /* TaskCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C33BA427F9D8AA00C010EB /* TaskCellViewModel.swift */; };
+		F6C33BA727F9F99600C010EB /* InputError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6C33BA627F9F99600C010EB /* InputError.swift */; };
+		F6C33BA927FA0C5800C010EB /* taskData.json in Resources */ = {isa = PBXBuildFile; fileRef = F6C33BA827FA0C5800C010EB /* taskData.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		F6C33BA027F8FB9D00C010EB /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		F6C33BA227F9D86700C010EB /* TaskListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewModel.swift; sourceTree = "<group>"; };
 		F6C33BA427F9D8AA00C010EB /* TaskCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCellViewModel.swift; sourceTree = "<group>"; };
+		F6C33BA627F9F99600C010EB /* InputError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputError.swift; sourceTree = "<group>"; };
+		F6C33BA827FA0C5800C010EB /* taskData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = taskData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,7 @@
 		F6C33B7B27F8F2C000C010EB = {
 			isa = PBXGroup;
 			children = (
+				F6C33BA827FA0C5800C010EB /* taskData.json */,
 				F6C33B8627F8F2C000C010EB /* TaskDemoFirebase */,
 				F6C33B8527F8F2C000C010EB /* Products */,
 			);
@@ -108,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				F6C33BA027F8FB9D00C010EB /* Task.swift */,
+				F6C33BA627F9F99600C010EB /* InputError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +177,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6C33B8F27F8F2C200C010EB /* Preview Assets.xcassets in Resources */,
+				F6C33BA927FA0C5800C010EB /* taskData.json in Resources */,
 				F6C33B8C27F8F2C200C010EB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -185,6 +192,7 @@
 				F6C33B9927F8F55300C010EB /* View+Ext.swift in Sources */,
 				F6C33B8A27F8F2C000C010EB /* ContentView.swift in Sources */,
 				F6C33B9C27F8F61100C010EB /* TaskListView.swift in Sources */,
+				F6C33BA727F9F99600C010EB /* InputError.swift in Sources */,
 				F6C33B8827F8F2C000C010EB /* TaskDemoFirebaseApp.swift in Sources */,
 				F6C33B9727F8F48600C010EB /* Color+Ext.swift in Sources */,
 				F6C33BA327F9D86700C010EB /* TaskListViewModel.swift in Sources */,
