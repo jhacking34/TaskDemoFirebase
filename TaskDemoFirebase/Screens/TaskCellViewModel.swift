@@ -10,6 +10,7 @@ import Combine
 
 class TaskCellViewModel: ObservableObject, Identifiable {
     @Published var task: Task
+    @Published var completionStatusIcon = ""
     
     private var cancellables = Set<AnyCancellable>()
     
@@ -21,6 +22,11 @@ class TaskCellViewModel: ObservableObject, Identifiable {
     
     init(localtask: Task) {
         self.task = localtask
+        
+        $task
+            .map{ $0.completed ? "checkmark.circle.fill" : "circle"}
+            .assign(to: \.completionStatusIcon, on: self)
+            .store(in: &cancellables)
         
         //This pipeline takes the id from the task and assigns it to the id above which is then associated to the textfield on the view
         $task

@@ -14,7 +14,7 @@ struct TaskCellView: View {
     
     var body: some View {
         HStack(spacing: 12){
-            Image(systemName: imgName)
+            Image(systemName: taskCellVM.completionStatusIcon)
                 .font(.largeTitle)
                 .foregroundColor(Color.brandAccent)
                 .padding(.leading, 50)

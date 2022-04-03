@@ -22,7 +22,7 @@ struct Task: Identifiable {
 
 #if DEBUG
 let testDataTasks = [
-    Task(title: "Implement UI", priority: .medium, completed: false),
+    Task(title: "Implement UI", priority: .medium, completed: true),
     Task(title: "Connect to Firebase", priority: .medium, completed: false),
     Task(title: "Add Flare to app", priority: .low, completed: false)
 ]
