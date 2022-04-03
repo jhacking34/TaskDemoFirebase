@@ -45,6 +45,8 @@ struct Task: Codable, Identifiable {
 }
 
 #if DEBUG
+
+// This is used for UI development
 let testDataTasks = [
     Task(title: "Implement UI", priority: .medium, completed: true),
     Task(title: "Connect to Firebase", priority: .medium, completed: false),

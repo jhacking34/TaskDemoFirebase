@@ -10,11 +10,11 @@ import Combine
 
 class TaskListViewModel: ObservableObject{
     @Published var taskCellViewModels = [TaskCellViewModel]()
-    var taskTempData = [Task]()
+    var localData = [Task]()
     
     init(){
         loadJsonData()
-        self.taskCellViewModels = taskTempData.map { task in
+        self.taskCellViewModels = localData.map { task in
             TaskCellViewModel(localtask: task)
         }
     }
@@ -43,7 +43,7 @@ class TaskListViewModel: ObservableObject{
         }
         
         let task = Task(title: taskData.title, priority: taskData.priority, completed: taskData.completed)
-        taskTempData = [task]
+        localData = [task]
     }
     
 }

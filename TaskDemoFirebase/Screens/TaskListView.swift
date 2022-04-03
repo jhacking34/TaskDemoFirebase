@@ -73,9 +73,6 @@ struct TaskListView: View {
                 }
             }
         }
-        .onAppear(){
-           // taskListVM.loadJsonData()
-        }
     }
 }
 
