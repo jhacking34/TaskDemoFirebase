@@ -15,7 +15,7 @@ class TaskListViewModel: ObservableObject{
     
     
     init(){
-        var localData = apiService.loadJsonData()
+        let localData = apiService.loadJsonData()
         self.taskCellViewModels = localData.tasks.map { task in
                 TaskCellViewModel(localtask: task)
         }
