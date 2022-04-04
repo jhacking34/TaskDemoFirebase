@@ -10,7 +10,7 @@ import Foundation
 class LocalApiService {
     
     
-    func loadJsonData() -> [Task]{
+    func loadJsonData() -> Tasks{
         let decoder = JSONDecoder()
         
         guard let sourceURL = Bundle.main.url(forResource: "taskData", withExtension: "json") else {
@@ -21,11 +21,11 @@ class LocalApiService {
             fatalError("error loading data")
         }
         
-        guard let taskData = try? decoder.decode(Task.self, from: data) else {
+        guard let taskData = try? decoder.decode(Tasks.self, from: data) else {
             fatalError("Data decode Error")
         }
         
-        let task = Task(title: taskData.title, priority: taskData.priority, completed: taskData.completed)
-        return [task]
+        //let task = Task(title: taskData.title, priority: taskData.priority, completed: taskData.completed)
+        return taskData
     }
 }

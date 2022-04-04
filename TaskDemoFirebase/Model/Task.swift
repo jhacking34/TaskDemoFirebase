@@ -24,24 +24,12 @@ struct Task: Codable, Identifiable {
         case priority = "priority"
         case completed = "completed"
     }
+}
+
+struct Tasks: Codable, Identifiable {
+    var id : Int
+    var tasks : [Task]
     
-    func encode()-> Data? {
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(self) {
-            return encoded
-        } else {
-            return nil
-        }
-    }
-    
-    static func decode(taskData: Data) -> Task? {
-        let decoder = JSONDecoder()
-        if let task = try? decoder.decode(Task.self, from: taskData){
-            return task
-        } else {
-            return nil
-        }
-    }
 }
 
 #if DEBUG

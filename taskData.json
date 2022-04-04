@@ -1,5 +1,15 @@
 {
-      "title" : "Implement 2 UI",
-      "priority" : "medium" ,
-      "completed" : true
+    "id" : 1,
+    "tasks" : [
+        {
+          "title" : "Implement 2 UI",
+          "priority" : "medium" ,
+          "completed" : true
+        },
+        {
+          "title" : "Connect to local Data",
+          "priority" : "medium" ,
+          "completed" : false
+        }
+     ]
 }

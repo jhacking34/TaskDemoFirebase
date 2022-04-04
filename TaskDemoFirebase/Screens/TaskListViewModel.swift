@@ -7,16 +7,17 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class TaskListViewModel: ObservableObject{
     @Published var taskCellViewModels = [TaskCellViewModel]()
     let apiService = LocalApiService()
-    var localData = [Task]()
+    
     
     init(){
-        localData = apiService.loadJsonData()
-        self.taskCellViewModels = localData.map { task in
-            TaskCellViewModel(localtask: task)
+        var localData = apiService.loadJsonData()
+        self.taskCellViewModels = localData.tasks.map { task in
+                TaskCellViewModel(localtask: task)
         }
     }
     
