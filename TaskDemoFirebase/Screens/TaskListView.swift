@@ -59,13 +59,32 @@ struct TaskListView: View {
                     
                     List{
                         ForEach (taskListVM.taskCellViewModels) { taskCellVM in
-                           TaskCellView(taskCellVM: taskCellVM, imgName: "circle")
+                            TaskCellView(taskCellVM: taskCellVM){ result in
+                                // this is where we would call func to update the tasks
+                                switch result{
+                                case .success(let task):
+                                    print(task)
+                                case .failure(.empty):
+                                    print("didn't work")
+                                }
+                                
+                            }
                         }
                         .onDelete { indexSet in
                             taskListVM.removeTask(indexSet)
                         }
                         if self.presentAddNew{
-                            TaskCellView(taskCellVM: TaskCellViewModel.newTask(), imgName: "circle")
+                            TaskCellView(taskCellVM: TaskCellViewModel.newTask()) { result in
+                                // this is where we would call func to save new tasks
+                                switch result{
+                                case .success(let task) :
+                                    taskListVM.addNewTask(newTask: task)
+                                case .failure(.empty) :
+                                    print("Something went wrong creating task")
+                                }
+                                self.presentAddNew.toggle() //closed new task
+                            }
+                            
                         }
                     }
                     .listStyle(.plain)

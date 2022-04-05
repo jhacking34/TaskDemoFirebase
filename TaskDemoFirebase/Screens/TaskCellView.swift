@@ -9,9 +9,9 @@ import SwiftUI
 
 struct TaskCellView: View {
     @ObservedObject var taskCellVM: TaskCellViewModel
-    var onCommit: (Result<Task, InputError>) -> Void = {_ in }
+    var onSave: (Result<Task, InputError>) -> Void = {_ in }  //This is our closure handle for when a new cell view is created. We will use this on the text field to call save new or update task fields.
     
-    let imgName : String
+    let imgName : String = "circle"
     
     var body: some View {
         HStack(spacing: 12){
@@ -22,11 +22,11 @@ struct TaskCellView: View {
                 .onTapGesture {
                     self.taskCellVM.task.completed.toggle()
                 }
-            TextField("Enter task title", text: $taskCellVM.task.title, onCommit: {
+            TextField("Enter task title", text: $taskCellVM.task.title, onCommit: { // right here wea are using on onSave closure declared above.
                 if !self.taskCellVM.task.title.isEmpty{
-                    self.onCommit(.success(self.taskCellVM.task))
+                    self.onSave(.success(self.taskCellVM.task))  // if is a task we set it to the task variable in the associated VM which uses the combine pipeline to associated id and stuff with task.
                 } else {
-                    self.onCommit(.failure(.empty))
+                    self.onSave(.failure(.empty))
                 }
                 
             })
@@ -42,9 +42,9 @@ struct TaskCellView: View {
 struct TaskCellView_Previews: PreviewProvider {
     static var previews: some View {
         List{
-            TaskCellView(taskCellVM: TaskCellViewModel(localtask: testDataTasks[0]), imgName: "circle")
-            TaskCellView(taskCellVM: TaskCellViewModel(localtask: testDataTasks[1]), imgName: "circle")
-            TaskCellView(taskCellVM: TaskCellViewModel(localtask: testDataTasks[2]), imgName: "circle")
+            TaskCellView(taskCellVM: TaskCellViewModel(localtask: testDataTasks[0]))
+            TaskCellView(taskCellVM: TaskCellViewModel(localtask: testDataTasks[1]))
+            TaskCellView(taskCellVM: TaskCellViewModel(localtask: testDataTasks[2]))
         }
         .listStyle(.automatic)
     }

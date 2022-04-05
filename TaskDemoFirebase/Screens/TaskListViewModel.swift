@@ -10,7 +10,7 @@ import Combine
 import SwiftUI
 
 class TaskListViewModel: ObservableObject{
-    @Published var taskCellViewModels = [TaskCellViewModel]()
+    @Published var taskCellViewModels = [TaskCellViewModel]() // array of our task View Models
     let apiService = LocalApiService()
     
     
@@ -27,6 +27,7 @@ class TaskListViewModel: ObservableObject{
     
     func addNewTask(newTask: Task){
         taskCellViewModels.append(TaskCellViewModel(localtask: newTask))
+        print(taskCellViewModels.count)
     }
     
 }
