@@ -9,7 +9,7 @@
         {
           "title" : "Connect to local Data",
           "priority" : "medium" ,
-          "completed" : false
+          "completed" : true
         }
      ]
 }

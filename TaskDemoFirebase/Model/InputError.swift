@@ -10,3 +10,9 @@ import Foundation
 enum InputError: Error{
     case empty
 }
+
+enum FilterChoice {
+    case isTrue
+    case isFalse
+    case all
+}

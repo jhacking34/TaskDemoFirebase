@@ -39,6 +39,22 @@ struct TaskListView: View {
                         }
                         
                     }
+                    ZStack{
+                        Button {
+                            taskListVM.filterData(criteria: .isTrue)
+                        } label: {
+                            HStack{
+                                Spacer()
+                                Image(systemName: "plus.circle.fill")
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                Text("New 1Task")
+                            }
+                            .padding(.trailing, 180)
+                            .font(.system(size: 18, weight: .semibold, design:.rounded))
+                            .foregroundColor(Color.brandForegroundStandard)
+                        }
+                    }
                     Text("Simple Stay On Task")
                         .font(.largeTitle)
                         .bold()
@@ -58,7 +74,7 @@ struct TaskListView: View {
                         .padding(.bottom, 80)
                     
                     List{
-                        ForEach (taskListVM.taskCellViewModels) { taskCellVM in
+                        ForEach (taskListVM.filteredData) { taskCellVM in
                             TaskCellView(taskCellVM: taskCellVM){ result in
                                 // this is where we would call func to update the tasks
                                 switch result{

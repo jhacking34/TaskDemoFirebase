@@ -11,7 +11,10 @@ import SwiftUI
 
 class TaskListViewModel: ObservableObject{
     @Published var taskCellViewModels = [TaskCellViewModel]() // array of our task View Models
+    @Published var filteredData = [TaskCellViewModel]()
     let apiService = LocalApiService()
+    private var cancellable: AnyCancellable?
+    @Published var filterChoic : FilterChoice = .isFalse
     
     
     init(){
@@ -19,6 +22,27 @@ class TaskListViewModel: ObservableObject{
         self.taskCellViewModels = localData.tasks.map { task in
                 TaskCellViewModel(localtask: task)
         }
+        filterData(criteria: .all)
+    }
+    
+    func filterData(criteria: FilterChoice){
+        filteredData = []
+        print("this is how many \(taskCellViewModels.count)")
+        cancellable = taskCellViewModels.publisher.filter { task in
+            switch criteria {
+            case .isTrue:
+                return task.task.completed == true
+            case .isFalse:
+                return task.task.completed == false
+            case .all:
+                return task.task.completed == true 
+            }
+            
+        }
+        .sink { [unowned self] datum in
+            filteredData.append(datum)
+        }
+        
     }
     
     func removeTask(_ atLocation: IndexSet){
@@ -27,7 +51,7 @@ class TaskListViewModel: ObservableObject{
     
     func addNewTask(newTask: Task){
         taskCellViewModels.append(TaskCellViewModel(localtask: newTask))
-        print(taskCellViewModels.count)
+        filterData(criteria: self.filterChoic)
     }
     
 }
