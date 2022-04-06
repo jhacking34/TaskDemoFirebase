@@ -80,6 +80,7 @@ struct TaskListView: View {
                                 switch result{
                                 case .success(let task):
                                     print(task)
+                                    #warning("TODO: -  Need to add what to do when task updated for filter ")
                                 case .failure(.empty):
                                     print("didn't work")
                                 }
